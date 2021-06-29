@@ -2,6 +2,8 @@
 
 /**
  * User class
+ * @author Enrico <email@email.com>
+* @copyright 2021 Enrico
  */
 class User
 {
@@ -11,7 +13,7 @@ class User
     protected $username;
     protected $password;
 
-    function __construct($name, $lastname, $email, $usrname, $password)
+    function __construct(string $name, string $lastname, string $email, string $usrname, string $password)
     {
         $this->name = $name;
         $this->lastname = $lastname;
