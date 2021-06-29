@@ -32,6 +32,15 @@ echo '</pre>';
 
 <body>
 
+    <?php foreach ($products as $product) : ?>
+
+    <h2><?php echo $product->name(); ?></h2>
+    <p><?= $product->desc() ?></p>
+
+
+
+    <?php endforeach ?>
+
 </body>
 
 </html>

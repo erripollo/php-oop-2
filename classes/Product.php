@@ -28,6 +28,16 @@ class Product
         $this->price = $price;
         $this->instock = $instock;
     }
+
+    public function name()
+    {
+        return $this->name;
+    }
+
+    public function desc()
+    {
+        return $this->desc;
+    }
 }
 
 ?>
