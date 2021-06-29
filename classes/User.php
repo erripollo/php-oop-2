@@ -27,7 +27,7 @@ class User
         return $this->name;
     }
     
-    public function insertCreditCard($creditCard)
+    public function insertCreditCard(CreditCard $creditCard)
     {
         return 'processed payment';
     }

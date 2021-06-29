@@ -9,14 +9,15 @@ require_once __DIR__ . '/classes/CreditCard.php';
 //Database
 require_once __DIR__ . '/database/db.php';
 
-echo '<pre>';
+/* echo '<pre>';
 var_dump($products);
 echo '</pre>';
 
 echo '<pre>';
 var_dump($users);
-echo '</pre>';
+echo '</pre>'; */
 
+$card = new CreditCard(123456, '12/2022', 789)
 
 ?>
 
@@ -47,6 +48,7 @@ echo '</pre>';
 
             <h3>Ciao <?= $user->name() ?></h3>
             <p>Sei un utente premium, hai diritto al <?php echo $user->discount(); ?>% di sconto</p>
+            <p><?= $user->insertCreditCard($card) ?></p>
 
         <?php endif ?>
 
