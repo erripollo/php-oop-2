@@ -22,6 +22,11 @@ class User
         $this->password = $password;
     }
 
+    public function name()
+    {
+        return $this->name;
+    }
+    
     public function insertCreditCard($creditCard)
     {
         return 'processed payment';

@@ -37,7 +37,18 @@ echo '</pre>';
     <h2><?php echo $product->name(); ?></h2>
     <p><?= $product->desc() ?></p>
 
+    <?php endforeach; ?>
 
+
+    <?php foreach ($users as $user) : ?>
+
+       
+        <?php if ( method_exists($user, 'isPremium') && $user->isPremium()) : ?>
+
+            <h3>Ciao <?= $user->name() ?></h3>
+            <p>Sei un utente premium, hai diritto al <?php echo $user->discount(); ?>% di sconto</p>
+
+        <?php endif ?>
 
     <?php endforeach ?>
 
