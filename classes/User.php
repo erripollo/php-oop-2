@@ -13,12 +13,12 @@ class User
     protected $username;
     protected $password;
 
-    function __construct(string $name, string $lastname, string $email, string $usrname, string $password)
+    function __construct(string $name, string $lastname, string $email, string $username, string $password)
     {
         $this->name = $name;
         $this->lastname = $lastname;
         $this->email = $email;
-        $this->usrname = $usrname;
+        $this->username = $username;
         $this->password = $password;
     }
 
