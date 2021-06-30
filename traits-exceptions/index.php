@@ -43,6 +43,11 @@ trait GetAttribute
     {
         return $this->sensor;
     }
+
+    public function instock()
+    {
+        return $this->instock;
+    }
    
 }
 
@@ -75,7 +80,7 @@ class Product
     protected $name;
     protected $desc;
     protected $price;
-    protected $instock;
+    public $instock;
 
     function __construct(string $name, string $desc, float $price, $instock)
     {
@@ -117,7 +122,7 @@ $cameras =
     new DigitalCamera('Nikon', 'Lorem, ipsum dolor.', 990.99, 5, 'reflex', 24, 'fullframe'),
     new DigitalCamera('Canon', 'Lorem, ipsum dolor. psum dolor', 890.99, 3, 'compact', 40, 'apsc'),
     new DigitalCamera('Sony', 'Lorem, ipsum dolor. Lorem', 1090.99, 0, 'mirrorless', 24, 'fullframe'),
-    new DigitalCamera('Olympus', 'Lorem, ipsum Lorem, ipsum dolor.', 790.99, 'null', 'mirrorless', 24, 'micro4/3'),
+    new DigitalCamera('Olympus', 'Lorem, ipsum Lorem, ipsum dolor.', 790.99, 4, 'mirrorless', 24, 'micro4/3'),
 
 ]
 
@@ -126,3 +131,24 @@ $cameras =
 ?>
 
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <?php foreach ($cameras as $camera) : ?>
+
+        <h2><?= $camera->name() ?></h2>
+        <p><?= $camera->type() ?> <?= $camera->sensor() ?> <?= $camera->resolution() ?> mpx</p>
+        <p><?= $camera->desc() ?></p>
+        <p><?= $camera->price() ?> €</p>
+        
+    <?php endforeach ?>
+
+</body>
+</html>
