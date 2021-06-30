@@ -52,7 +52,7 @@ trait Stock
     public function stock($instock)
     {
         if ($instock > 0) {
-            'Product in stock';
+            'Product in stock' . $instock . 'items';
         }
         elseif (!is_int($instock)) {
             throw new Exception('Is not a number');
@@ -77,7 +77,7 @@ class Product
     protected $price;
     protected $instock;
 
-    function __construct(strin $name, string $desc, float $price, int $instock)
+    function __construct(string $name, string $desc, float $price, $instock)
     {
         $this->name = $name;
         $this->desc = $desc;
@@ -101,7 +101,7 @@ class DigitalCamera extends Product
     protected $resolution;
     protected $sensor;
 
-    function __construct(strin $name, string $desc, float $price, int $instock, string $type, int $resolution, string $sensor)
+    function __construct($name, $desc, $price, $instock, string $type, int $resolution, string $sensor)
     {
         parent::__construct($name, $desc, $price, $instock);
         $this->type = $type;
@@ -112,9 +112,17 @@ class DigitalCamera extends Product
 }
 
 
+$cameras = 
+[
+    new DigitalCamera('Nikon', 'Lorem, ipsum dolor.', 990.99, 5, 'reflex', 24, 'fullframe'),
+    new DigitalCamera('Canon', 'Lorem, ipsum dolor. psum dolor', 890.99, 3, 'compact', 40, 'apsc'),
+    new DigitalCamera('Sony', 'Lorem, ipsum dolor. Lorem', 1090.99, 0, 'mirrorless', 24, 'fullframe'),
+    new DigitalCamera('Olympus', 'Lorem, ipsum Lorem, ipsum dolor.', 790.99, 'null', 'mirrorless', 24, 'micro4/3'),
 
+]
 
 
 
 ?>
-Lorem, ipsum dolor.
+
+
